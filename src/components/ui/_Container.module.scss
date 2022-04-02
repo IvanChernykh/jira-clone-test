@@ -1,10 +1,12 @@
+@import "../../scss/colors.scss";
+
 .container {
     width: 100%;
     margin: 0 auto;
     padding: 1.5rem;
-    border: 1px solid #111;
+    border: 1px solid $blackDark;
     border-radius: 15px;
-    background-color: #f5f5f5;
+    background-color: $backgroundLight;
     @media (max-width: 768px) {
         padding: 1rem;
     }

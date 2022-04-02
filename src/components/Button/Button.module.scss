@@ -1,10 +1,12 @@
+@import "../../scss/colors.scss";
+
 .container {
     display: flex;
     justify-content: center;
     padding-top: 2rem;
 }
 .button {
-    border: 1px solid #000;
+    border: 1px solid $blackDark;
     border-radius: 1rem;
     outline: none;
     padding: 0.5rem 1rem;
@@ -13,7 +15,7 @@
     cursor: pointer;
     transition: all 0.2s;
     &:hover {
-        background: #222;
+        background: $blackDark;
         color: #fff;
     }
 }

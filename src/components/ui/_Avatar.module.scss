@@ -1,9 +1,11 @@
+@import "../../scss/colors.scss";
+
 .container {
     position: relative;
     min-width: 70px;
     height: 70px;
     border-radius: 50%;
-    background-color: #808080;
+    background-color: $backgroundMain;
 }
 .letters {
     position: absolute;
