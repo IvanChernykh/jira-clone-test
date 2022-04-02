@@ -1,7 +1,10 @@
 import { ITodoData, IUserData } from "../../../types";
 
-interface ITodo extends ITodoData {
+export interface ITodo extends ITodoData {
     status: TodoStatus
+}
+export interface IUser extends IUserData {
+    avatarColor: string
 }
 
 export enum TodoStatus {
@@ -11,6 +14,6 @@ export enum TodoStatus {
 }
 
 export interface IState {
-    users: IUserData[] | []
+    users: IUser[] | []
     todos: ITodo[] | []
 }

@@ -1,0 +1,14 @@
+.card {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    cursor: pointer;
+}
+.inner {
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}

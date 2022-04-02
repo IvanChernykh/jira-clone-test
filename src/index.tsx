@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOMClient from 'react-dom/client'
+import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
 import App from './App'
@@ -8,13 +8,12 @@ import store from './redux/store'
 import './scss/index.scss'
 
 
-const container = document.getElementById('root')
-const root = ReactDOMClient.createRoot(container!)
 
-root.render(
+ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
             <App />
         </Provider>
-    </React.StrictMode>
+    </React.StrictMode>,
+    document.getElementById('root')
 )

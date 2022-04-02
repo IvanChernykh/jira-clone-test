@@ -9,5 +9,9 @@ export interface ISetTodos {
     type: typeof reducerActions.SET_TODOS
     payload: ITodoData[]
 }
+export interface IUpdTodoStatus {
+    type: typeof reducerActions.UPD_STATUS
+    payload: number
+}
 
-export type ActionTypes = ISetUsers | ISetTodos
+export type ActionTypes = ISetUsers | ISetTodos | IUpdTodoStatus

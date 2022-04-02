@@ -1,7 +1,27 @@
+html {
+    font-size: 16px;
+    @media (max-width: 992px) {
+        font-size: 14px;
+    }
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: "Roboto", "Oxygen", "Ubuntu", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 .container {
     padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
 }
