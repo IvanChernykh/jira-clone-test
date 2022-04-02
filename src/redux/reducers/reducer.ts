@@ -1,7 +1,7 @@
 import { reducerActions } from "./actions"
 import { ITodoData, IUserData } from "../../types"
-import { ActionTypes, ISetTodos, ISetUsers, IUpdTodoStatus } from "./types/actionTypes"
-import { IState, TodoStatus } from "./types/stateTypes"
+import { ActionTypes, IReduceTotalTodos, ISetTodos, ISetUsers, IUpdTodoStatus } from "./types/actionTypes"
+import { IState, ITodo, TodoStatus } from "./types/stateTypes"
 import { getRandomColor } from "../../utils/utils"
 
 const initialState: IState = {
@@ -18,7 +18,6 @@ const reducer = (state = initialState, action: ActionTypes): IState => {
         }
         case reducerActions.SET_TODOS: {
             const todos = action.payload.map(item => ({ ...item, status: TodoStatus.todo }))
-                .slice(0, 10) //to reduce total number of items; should delete this late
 
             return { ...state, todos }
         }
@@ -35,6 +34,14 @@ const reducer = (state = initialState, action: ActionTypes): IState => {
 
             return { ...state, todos }
         }
+        case reducerActions.REDUCE_TOTAL_TODOS: {
+
+            const todos = state.users.map(user => {
+                return state.todos.find(todo => user.id === todo.userId)
+            }) as ITodo[]
+
+            return { ...state, todos }
+        }
         default: {
             return state
         }
@@ -45,5 +52,7 @@ export const setUsers = (payload: IUserData[]): ISetUsers => ({ type: reducerAct
 export const setTodos = (payload: ITodoData[]): ISetTodos => ({ type: reducerActions.SET_TODOS, payload })
 
 export const updTodoStatus = (todoId: number): IUpdTodoStatus => ({ type: reducerActions.UPD_STATUS, payload: todoId })
+
+export const reduceTotalTodos = (): IReduceTotalTodos => ({ type: reducerActions.REDUCE_TOTAL_TODOS })
 
 export default reducer

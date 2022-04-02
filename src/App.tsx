@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import Board from './components/Board'
 
+import Board from './components/Board'
+import Button from './components/Button/Button'
 import TicketList from './components/TicketList'
 
 import { getServerData } from './redux/reducers/thunks'
 
 
 
-type Props = {
+interface Props {
     getServerData: () => any
 }
 
@@ -19,10 +20,13 @@ const App: React.FC<Props> = ({ getServerData }) => {
     }, [])
 
     return (
-        <div className='container'>
-            <TicketList />
-            <Board />
-        </div>
+        <>
+            <Button />
+            <div className='container'>
+                <TicketList />
+                <Board />
+            </div>
+        </>
     )
 }
 

@@ -4,24 +4,14 @@ import { connect } from 'react-redux'
 import Container from './ui/Container'
 import TicketCard from './TicketCard/TicketCard'
 
-import { IState, ITodo, IUser } from '../redux/reducers/types/stateTypes'
+import { IState } from '../redux/reducers/types/stateTypes'
 import { updTodoStatus } from '../redux/reducers/reducer'
-import { IUpdTodoStatus } from '../redux/reducers/types/actionTypes'
 import { getCardUser, sortByStatus } from '../utils/utils'
+import { TodoProps } from '../types'
 
 
 
-type Props = {
-    todos: ITodo[] | []
-    users: IUser[] | []
-
-    updTodoStatus: (id: number) => IUpdTodoStatus
-}
-
-
-
-
-const TicketList: React.FC<Props> = ({ todos, users, updTodoStatus }) => {
+const TicketList: React.FC<TodoProps> = ({ todos, users, updTodoStatus }) => {
 
     const Cards = sortByStatus([...todos]).map(todo => {
 

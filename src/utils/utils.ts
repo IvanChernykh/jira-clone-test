@@ -30,3 +30,6 @@ export const sortByStatus = (todos: ITodo[] | []) => {
         return 0
     })
 }
+export const filterByStatus = (todos: ITodo[] | [], status: TodoStatus) => {
+    return todos.filter(todo => todo.status === status)
+}

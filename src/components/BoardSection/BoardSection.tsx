@@ -1,18 +1,15 @@
 import React from 'react'
-import { IUpdTodoStatus } from '../../redux/reducers/types/actionTypes'
 
-import { ITodo, IUser, TodoStatus } from '../../redux/reducers/types/stateTypes'
-import { getCardUser } from '../../utils/utils'
 import TicketCard from '../TicketCard/TicketCard'
+
+import { TodoStatus } from '../../redux/reducers/types/stateTypes'
+import { TodoProps } from '../../types'
+import { getCardUser } from '../../utils/utils'
 import cls from './_BoardSection.module.scss'
 
 
-type Props = {
+interface Props extends TodoProps {
     status: TodoStatus
-    todos: ITodo[] | []
-    users: IUser[] | []
-
-    updTodoStatus: (id: number) => IUpdTodoStatus
 }
 
 const BoardSection: React.FC<Props> = ({ status, todos, users, updTodoStatus }) => {
@@ -25,10 +22,10 @@ const BoardSection: React.FC<Props> = ({ status, todos, users, updTodoStatus }) 
     })
 
     return (
-        <>
+        <div>
             <h2 className={cls.title}>{status}</h2>
             {Cards}
-        </>
+        </div>
     )
 }
 

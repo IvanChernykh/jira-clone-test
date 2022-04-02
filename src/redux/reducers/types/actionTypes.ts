@@ -13,5 +13,8 @@ export interface IUpdTodoStatus {
     type: typeof reducerActions.UPD_STATUS
     payload: number
 }
+export interface IReduceTotalTodos {
+    type: typeof reducerActions.REDUCE_TOTAL_TODOS
+}
 
-export type ActionTypes = ISetUsers | ISetTodos | IUpdTodoStatus
+export type ActionTypes = ISetUsers | ISetTodos | IUpdTodoStatus | IReduceTotalTodos

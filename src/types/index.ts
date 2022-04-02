@@ -1,3 +1,6 @@
+import { IUpdTodoStatus } from "../redux/reducers/types/actionTypes"
+import { ITodo, IUser } from "../redux/reducers/types/stateTypes"
+
 export interface ITodoData {
     userId: number
     id: number
@@ -21,4 +24,11 @@ export interface IUserData {
             lng: number
         }
     }
+}
+
+export interface TodoProps {
+    todos: ITodo[] | []
+    users: IUser[] | []
+
+    updTodoStatus: (id: number) => IUpdTodoStatus
 }

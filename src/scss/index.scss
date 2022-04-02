@@ -19,7 +19,7 @@ body {
 .container {
     padding: 2rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 3fr;
     gap: 2rem;
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
